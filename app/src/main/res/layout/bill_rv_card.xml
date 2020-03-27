@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="bill"
+            type="com.sun.billmanager.bean.BillItem" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:orientation="vertical"
+        app:cardCornerRadius="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/card_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:contentDescription="@null"
+                android:src="@mipmap/ic_launcher_round" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/client_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@id/card_img"
+                android:text="@{bill.clientName}"
+                android:textSize="20sp"
+                tools:text="占位符....." />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/card_img"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@id/card_img"
+                android:text="@{bill.dealTime}"
+                android:textSize="18sp"
+                tools:text="占位符....." />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/card_img"
+                android:layout_marginTop="10dp" />
+        </RelativeLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

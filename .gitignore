@@ -119,3 +119,5 @@ lint/outputs/
 lint/tmp/
 # lint/reports/
 
+app/.gitignore
+gradle.properties
