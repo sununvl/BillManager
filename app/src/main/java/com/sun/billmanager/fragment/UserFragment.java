@@ -11,23 +11,29 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.sun.billmanager.R;
+import com.sun.billmanager.databinding.FragmentUserBinding;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class UserFragment extends Fragment {
+public class UserFragment extends BaseFragment<FragmentUserBinding> {
 
+    public static UserFragment getNewInstance() {
+        return new UserFragment();
+    }
 
-    public UserFragment() {
+    private UserFragment() {
         // Required empty public constructor
     }
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_user, container, false);
+    int getLayoutId() {
+        return R.layout.fragment_user;
     }
 
+    @Override
+    void initData() {
+
+    }
 }

@@ -1,11 +1,10 @@
 package com.sun.billmanager.activity;
 
+import android.os.Bundle;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
-
-import android.os.Bundle;
-import android.widget.TableLayout;
 
 import com.google.android.material.tabs.TabLayout;
 import com.sun.billmanager.R;
@@ -31,10 +30,10 @@ public class MainActivity extends AppCompatActivity {
 
         List<Fragment> fragmentList = new ArrayList<>();
 
-        fragmentList.add(new BillFragment());
-        fragmentList.add(new ChatFragment());
-        fragmentList.add(new ClientFragment());
-        fragmentList.add(new UserFragment());
+        fragmentList.add(BillFragment.getNewInstance());
+        fragmentList.add(ChatFragment.getNewInstance());
+        fragmentList.add(ClientFragment.getNewInstance());
+        fragmentList.add(UserFragment.getNewInstance());
 
         for (Fragment fragment : fragmentList) {
             getSupportFragmentManager().beginTransaction()
@@ -42,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
                     .commit();
         }
 
-        pager.setAdapter(new MainViewPagerAdapter(getSupportFragmentManager(),4,fragmentList));
+        pager.setAdapter(new MainViewPagerAdapter(getSupportFragmentManager(), 4, fragmentList));
 
         tableLayout.setupWithViewPager(pager);
     }

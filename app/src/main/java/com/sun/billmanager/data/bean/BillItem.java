@@ -1,4 +1,4 @@
-package com.sun.billmanager.bean;
+package com.sun.billmanager.data.bean;
 
 import java.util.List;
 
@@ -7,6 +7,13 @@ public class BillItem {
     private String dealTime;
     private List<ResItem> buyItem;
     private List<ResItem> giftItem;
+
+    public BillItem(String clientName, String dealTime, List<ResItem> buyItem, List<ResItem> giftItem) {
+        this.clientName = clientName;
+        this.dealTime = dealTime;
+        this.buyItem = buyItem;
+        this.giftItem = giftItem;
+    }
 
     public String getClientName() {
         return clientName;

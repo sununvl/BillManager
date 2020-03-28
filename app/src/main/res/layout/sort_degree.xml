@@ -5,7 +5,7 @@
 
         <variable
             name="degree"
-            type="com.sun.billmanager.bean.DegreeBean" />
+            type="com.sun.billmanager.data.bean.DegreeBean" />
     </data>
 
     <LinearLayout xmlns:tools="http://schemas.android.com/tools"

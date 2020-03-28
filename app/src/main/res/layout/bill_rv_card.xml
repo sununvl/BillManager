@@ -7,10 +7,10 @@
 
         <variable
             name="bill"
-            type="com.sun.billmanager.bean.BillItem" />
+            type="com.sun.billmanager.data.bean.BillItem" />
     </data>
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
@@ -60,6 +60,6 @@
         </RelativeLayout>
 
 
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 
 </layout>

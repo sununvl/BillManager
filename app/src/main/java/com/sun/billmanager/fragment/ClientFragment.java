@@ -11,23 +11,27 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.sun.billmanager.R;
+import com.sun.billmanager.databinding.FragmentClientBinding;
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ClientFragment extends Fragment {
+public class ClientFragment extends BaseFragment<FragmentClientBinding> {
 
-
-    public ClientFragment() {
-        // Required empty public constructor
+    public static ClientFragment getNewInstance() {
+        return new ClientFragment();
     }
 
+    private ClientFragment() {
+    }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_client, container, false);
+    int getLayoutId() {
+        return R.layout.fragment_client;
     }
 
+    @Override
+    void initData() {
+
+    }
 }
