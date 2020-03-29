@@ -1,10 +1,6 @@
 package com.sun.billmanager.fragment;
 
 
-import android.view.LayoutInflater;
-import android.view.ViewGroup;
-
-import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -27,12 +23,12 @@ public class BillFragment extends BaseFragment<FragmentBillBinding> {
     }
 
     @Override
-    int getLayoutId() {
+    protected int getLayoutId() {
         return R.layout.fragment_bill;
     }
 
     @Override
-    void initData() {
+    protected void initData() {
         BillAdapter billAdapter = new BillAdapter();
         addDisposable(DataPublisher.getInstance().subBillList(billAdapter.getConsumer()));
         mViewBinding.billRv.setLayoutManager(new LinearLayoutManager(BaseApplication.getCtx()));

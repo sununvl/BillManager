@@ -1,14 +1,17 @@
 package com.sun.billmanager.activity;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 import com.sun.billmanager.R;
 import com.sun.billmanager.adapter.MainViewPagerAdapter;
+import com.sun.billmanager.databinding.ActivityMainBinding;
 import com.sun.billmanager.fragment.BillFragment;
 import com.sun.billmanager.fragment.ChatFragment;
 import com.sun.billmanager.fragment.ClientFragment;
@@ -17,16 +20,15 @@ import com.sun.billmanager.fragment.UserFragment;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity<ActivityMainBinding> {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    protected int getLayoutId() {
+        return R.layout.activity_main;
+    }
 
-        ViewPager pager = findViewById(R.id.main_vp);
-
-        TabLayout tableLayout = findViewById(R.id.main_tab);
+    @Override
+    protected void initData() {
 
         List<Fragment> fragmentList = new ArrayList<>();
 
@@ -41,8 +43,15 @@ public class MainActivity extends AppCompatActivity {
                     .commit();
         }
 
-        pager.setAdapter(new MainViewPagerAdapter(getSupportFragmentManager(), 4, fragmentList));
+        mBinding.mainVp.setAdapter(new MainViewPagerAdapter(getSupportFragmentManager(), 4, fragmentList));
 
-        tableLayout.setupWithViewPager(pager);
+        mBinding.mainTab.setupWithViewPager(mBinding.mainVp);
+
+        mBinding.setController(this);
+    }
+
+
+    public Context getContext() {
+        return this;
     }
 }

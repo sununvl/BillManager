@@ -23,16 +23,16 @@ public abstract class BaseFragment<T extends ViewDataBinding> extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        mViewBinding = DataBindingUtil.inflate(inflater,getLayoutId(),container,false);
+        mViewBinding = DataBindingUtil.inflate(inflater, getLayoutId(), container, false);
         initData();
         return mViewBinding.getRoot();
     }
 
-    abstract int getLayoutId();
+    protected abstract int getLayoutId();
 
-    abstract void initData();
+    protected abstract void initData();
 
-    void addDisposable(Disposable d) {
+    protected void addDisposable(Disposable d) {
         mDisposableList.add(d);
     }
 
