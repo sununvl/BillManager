@@ -1,9 +1,11 @@
 package com.sun.billmanager.utils;
 
+import com.sun.billmanager.bean.LevelBean;
 import com.sun.billmanager.net.BillPage;
 
 import java.util.concurrent.TimeUnit;
 
+import io.reactivex.Observer;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 import okhttp3.OkHttpClient;
@@ -36,10 +38,11 @@ public class NetUtils {
     }
 
 
-    public void getBillPage() {
-        retrofit.create(BillPage.class).getBillList()
-                .subscribeOn(Schedulers.io())
+    public void getBillPage(Observer<LevelBean> o) {
+        retrofit.create(BillPage.class)
+                .getBillList()
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe();
+                .subscribeOn(Schedulers.io())
+                .subscribe(o);
     }
 }

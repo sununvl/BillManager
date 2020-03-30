@@ -25,9 +25,9 @@ public class MainViewPagerAdapter extends FragmentPagerAdapter {
         mList.addAll(list);
 
         mTitleList.add("账单");
-        mTitleList.add("统计");
+        mTitleList.add("分类");
         mTitleList.add("客户");
-        mTitleList.add("个人");
+        mTitleList.add("统计");
     }
 
     @NonNull
@@ -50,9 +50,9 @@ public class MainViewPagerAdapter extends FragmentPagerAdapter {
         return mList.get(position);
     }
 
-    @Nullable
-    @Override
-    public CharSequence getPageTitle(int position) {
-        return mTitleList.get(position);
-    }
+//    @Nullable
+//    @Override
+//    public CharSequence getPageTitle(int position) {
+//        return mTitleList.get(position);
+//    }
 }

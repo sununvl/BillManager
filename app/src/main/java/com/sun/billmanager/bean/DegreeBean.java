@@ -1,4 +1,4 @@
-package com.sun.billmanager.data.bean;
+package com.sun.billmanager.bean;
 
 import java.util.ArrayList;
 import java.util.List;

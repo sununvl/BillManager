@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.sun.billmanager.R;
+import com.sun.billmanager.base.BaseActivity;
 import com.sun.billmanager.databinding.ActivityAddBillBinding;
 
 public class AddBillActivity extends BaseActivity<ActivityAddBillBinding> {
@@ -16,7 +17,7 @@ public class AddBillActivity extends BaseActivity<ActivityAddBillBinding> {
     }
 
     @Override
-    protected void initData() {
+    protected void init() {
 
     }
 

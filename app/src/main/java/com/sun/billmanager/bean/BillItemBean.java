@@ -1,14 +1,14 @@
-package com.sun.billmanager.data.bean;
+package com.sun.billmanager.bean;
 
 import java.util.List;
 
-public class BillItem {
+public class BillItemBean {
     private String clientName;
     private String dealTime;
     private List<ResItem> buyItem;
     private List<ResItem> giftItem;
 
-    public BillItem(String clientName, String dealTime, List<ResItem> buyItem, List<ResItem> giftItem) {
+    public BillItemBean(String clientName, String dealTime, List<ResItem> buyItem, List<ResItem> giftItem) {
         this.clientName = clientName;
         this.dealTime = dealTime;
         this.buyItem = buyItem;
