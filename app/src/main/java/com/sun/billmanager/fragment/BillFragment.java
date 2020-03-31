@@ -10,7 +10,6 @@ import com.sun.billmanager.R;
 import com.sun.billmanager.adapter.BillAdapter;
 import com.sun.billmanager.base.BaseFragment;
 import com.sun.billmanager.databinding.FragmentBillBinding;
-import com.sun.billmanager.databinding.FragmentBillBindingImpl;
 import com.sun.billmanager.vm.BillFragmentViewModel;
 
 /**
@@ -36,7 +35,7 @@ public class BillFragment extends BaseFragment<FragmentBillBinding> {
     protected void init() {
         mVm = ViewModelProviders.of(this).get(BillFragmentViewModel.class);
         BillAdapter billAdapter = new BillAdapter();
-
+        // TODO: 2020/3/31 add bill data
         mViewBinding.billRv.setLayoutManager(new LinearLayoutManager(CtxProvider.sCtx));
         mViewBinding.billRv.setAdapter(billAdapter);
     }

@@ -8,6 +8,7 @@
         <variable
             name="controller"
             type="com.sun.billmanager.activity.MainActivity" />
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -20,8 +21,8 @@
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:background="@color/colorPrimaryTitle"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             app:tabIndicatorHeight="0dp"
             app:tabMode="fixed" />
 
@@ -33,5 +34,13 @@
             app:layout_constraintBottom_toTopOf="@id/main_tab"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:layout_constraintBottom_toTopOf="@id/main_tab"
+            app:layout_constraintEnd_toEndOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

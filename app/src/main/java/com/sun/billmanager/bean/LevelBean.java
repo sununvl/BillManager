@@ -12,7 +12,33 @@ public class LevelBean {
 
     private int code;
     private String message;
-    private List<String> data;
+    private List<String> level0;
+    private List<String> level1;
+    private List<String> level2;
+
+    public List<String> getLevel0() {
+        return level0;
+    }
+
+    public void setLevel0(List<String> level0) {
+        this.level0 = level0;
+    }
+
+    public List<String> getLevel1() {
+        return level1;
+    }
+
+    public void setLevel1(List<String> level1) {
+        this.level1 = level1;
+    }
+
+    public List<String> getLevel2() {
+        return level2;
+    }
+
+    public void setLevel2(List<String> level2) {
+        this.level2 = level2;
+    }
 
     public int getCode() {
         return code;
@@ -28,13 +54,5 @@ public class LevelBean {
 
     public void setMessage(String message) {
         this.message = message;
-    }
-
-    public List<String> getData() {
-        return data;
-    }
-
-    public void setData(List<String> data) {
-        this.data = data;
     }
 }

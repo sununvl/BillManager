@@ -1,54 +1,41 @@
 package com.sun.billmanager.adapter;
 
-import android.view.LayoutInflater;
-import android.view.ViewGroup;
-
 import androidx.annotation.NonNull;
-import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ObservableArrayList;
+import androidx.databinding.ObservableList;
 
-import com.jcodecraeer.xrecyclerview.XRecyclerView;
-import com.sun.billmanager.CtxProvider;
 import com.sun.billmanager.R;
+import com.sun.billmanager.base.BaseRvAdapter;
 import com.sun.billmanager.base.BaseViewHolder;
 import com.sun.billmanager.bean.BillItemBean;
-import com.sun.billmanager.databinding.BillRvCardBinding;
+import com.sun.billmanager.databinding.VhFragmentBillRvCardBinding;
 
-import java.util.ArrayList;
 import java.util.List;
 
-public class BillAdapter extends XRecyclerView.Adapter<BaseViewHolder<BillRvCardBinding>> {
+public class BillAdapter extends BaseRvAdapter<VhFragmentBillRvCardBinding> {
 
     private static final String TAG = "sunhy";
 
-    private List<BillItemBean> mData = new ArrayList<>();
+    private ObservableList<BillItemBean> mData = new ObservableArrayList<>();
 
     public void updateData(List<BillItemBean> data) {
         mData.clear();
         mData.addAll(data);
-        notifyDataSetChanged();
-    }
-
-    @NonNull
-    @Override
-    public BaseViewHolder<BillRvCardBinding> onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        return new BaseViewHolder<>(
-                DataBindingUtil.inflate(
-                        LayoutInflater.from(CtxProvider.sCtx)
-                        , R.layout.bill_rv_card
-                        , parent
-                        , false
-                ).getRoot()
-        );
     }
 
     @Override
-    public void onBindViewHolder(@NonNull BaseViewHolder<BillRvCardBinding> holder, int position) {
-        holder.getBinding().setBill(mData.get(position));
+    protected int getLayoutId() {
+        return R.layout.vh_fragment_bill_rv_card;
     }
 
     @Override
-    public int getItemCount() {
+    protected int getCount() {
         return mData.size();
+    }
+
+    @Override
+    protected void bind(@NonNull BaseViewHolder<VhFragmentBillRvCardBinding> holder, int position) {
+        holder.getBinding().setBill(mData.get(position));
     }
 
 

@@ -12,7 +12,7 @@ public class BaseViewHolder<T extends ViewDataBinding> extends XRecyclerView.Vie
 
     private T binding;
 
-    public BaseViewHolder(@NonNull View itemView) {
+    BaseViewHolder(@NonNull View itemView) {
         super(itemView);
         binding = DataBindingUtil.getBinding(itemView);
     }
