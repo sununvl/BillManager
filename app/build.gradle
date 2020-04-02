@@ -51,14 +51,10 @@ dependencies {
     implementation 'io.reactivex.rxjava2:rxjava:2.2.6'
 
     implementation 'com.squareup.retrofit2:retrofit:2.6.2'
-
     implementation 'com.squareup.retrofit2:converter-gson:2.3.0'//转换器，请求结果转换成Model
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'//配合Rxjava 使用
-
     implementation 'com.jcodecraeer:xrecyclerview:1.6.0'
-
     implementation 'com.google.code.gson:gson:2.3.0'
-
     implementation 'androidx.annotation:annotation:1.1.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
