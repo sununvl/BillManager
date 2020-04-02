@@ -52,4 +52,16 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
         mBinding.setController(this);
     }
 
+    public void onClickFAB() {
+        switch (mBinding.mainTab.getSelectedTabPosition()) {
+            case 0:
+                AddBillActivity.start(this);
+                break;
+            case 1:
+                AddLevelActivity.start(this);
+                break;
+        }
+    }
+
+
 }
