@@ -18,5 +18,6 @@ jobs:
         with:
           java-version: 1.8
       - name: Build with Gradle
-#        run: ./gradlew clean assembleRelease -p .  --stacktrace
+        run: ./gradlew clean
+#        assembleRelease -p .  --stacktrace
 #      run: ./gradlew assembleRelease --info
