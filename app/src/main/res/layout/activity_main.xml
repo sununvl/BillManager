@@ -41,6 +41,7 @@
             android:clickable="true"
             android:focusable="true"
             android:onClick="@{(v)->controller.onClickFAB()}"
+            android:backgroundTint="@color/colorPrimaryTitle"
             android:src="@drawable/ic_add"
             app:layout_constraintBottom_toTopOf="@id/main_tab"
             app:layout_constraintEnd_toEndOf="parent" />
