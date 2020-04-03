@@ -19,7 +19,7 @@ import io.reactivex.disposables.Disposable;
 public class BillFragmentViewModel extends AndroidViewModel {
 
     public MutableLiveData<List<BillItemBean>> mBillList = new MutableLiveData<>();
-    public MutableLiveData<LevelBean> mZeroLevelList = new MutableLiveData<>();
+    private MutableLiveData<LevelBean> mZeroLevelList = new MutableLiveData<>();
 
     public BillFragmentViewModel(@NonNull Application application) {
         super(application);
