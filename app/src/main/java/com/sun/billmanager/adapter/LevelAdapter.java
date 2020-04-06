@@ -2,7 +2,6 @@ package com.sun.billmanager.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.databinding.ObservableField;
-import androidx.databinding.ObservableList;
 
 import com.sun.billmanager.R;
 import com.sun.billmanager.base.BaseRvAdapter;

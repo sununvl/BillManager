@@ -6,10 +6,13 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.sun.billmanager.R;
+import com.sun.billmanager.adapter.LevelAdapter;
 import com.sun.billmanager.base.BaseFragment;
 import com.sun.billmanager.bean.LevelBean;
 import com.sun.billmanager.databinding.FragmentLevelBinding;
 import com.sun.billmanager.vm.LevelFragmentViewModel;
+
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -17,6 +20,7 @@ import com.sun.billmanager.vm.LevelFragmentViewModel;
 public class LevelFragment extends BaseFragment<FragmentLevelBinding> {
 
     private LevelFragmentViewModel mVm;
+    private LevelAdapter mAdapter;
 
     public static LevelFragment getNewInstance() {
         return new LevelFragment();
@@ -33,10 +37,10 @@ public class LevelFragment extends BaseFragment<FragmentLevelBinding> {
     @Override
     protected void init() {
         mVm = ViewModelProviders.of(this).get(LevelFragmentViewModel.class);
+        mAdapter = new LevelAdapter();
         mVm.getLevelBeanLiveData().observe(this, mLevelBeanObserver);
     }
 
-    private Observer<LevelBean> mLevelBeanObserver = levelBean -> {
-
+    private Observer<List<LevelBean>> mLevelBeanObserver = levelBean -> {
     };
 }

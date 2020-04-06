@@ -1,6 +1,6 @@
 package com.sun.billmanager.bean;
 
-class ClassifyBaseBean {
+class LevelBaseBean {
     private String data;
     private int id;
     private int parentId;
