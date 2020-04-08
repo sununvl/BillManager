@@ -57,9 +57,9 @@ public class MainActivity extends BaseActivity<ActivityMainBinding> {
             case 0:
                 AddBillActivity.start(this);
                 break;
-            case 1:
-                AddLevelActivity.start(this);
-                break;
+//            case 1:
+//                AddLevelActivity.start(this);
+//                break;
         }
     }
 

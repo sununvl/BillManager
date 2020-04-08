@@ -31,6 +31,11 @@ public abstract class BaseRvAdapter<T extends ViewDataBinding> extends RecyclerV
     }
 
     @Override
+    public int getItemViewType(int position) {
+        return super.getItemViewType(position);
+    }
+
+    @Override
     public int getItemCount() {
         return getCount();
     }

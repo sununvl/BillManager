@@ -4,6 +4,7 @@ package com.sun.billmanager.fragment;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.sun.billmanager.R;
 import com.sun.billmanager.adapter.LevelAdapter;
@@ -36,11 +37,16 @@ public class LevelFragment extends BaseFragment<FragmentLevelBinding> {
 
     @Override
     protected void init() {
-        mVm = ViewModelProviders.of(this).get(LevelFragmentViewModel.class);
         mAdapter = new LevelAdapter();
+        mVm = ViewModelProviders.of(this).get(LevelFragmentViewModel.class);
+        mViewBinding.setVm(mVm);
         mVm.getLevelBeanLiveData().observe(this, mLevelBeanObserver);
+        mViewBinding.levelRv.setAdapter(mAdapter);
+        mViewBinding.levelRv.setLayoutManager(new LinearLayoutManager(getContext()));
     }
 
     private Observer<List<LevelBean>> mLevelBeanObserver = levelBean -> {
+        mAdapter.updateData(levelBean);
     };
+
 }

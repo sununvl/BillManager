@@ -31,14 +31,38 @@ public class LevelFragmentViewModel extends AndroidViewModel {
             list = new ArrayList<>();
         }
         LevelBean bean = new LevelBean();
+        bean.setParentId(-1);
         bean.setParent(null);
-        bean.setData("ssssss");
-        bean.setId(list.size() + 1);
-        bean.setExpand(true);
+        bean.setData("id - > " + LevelBean.BASE_LEVEL_ID);
+        bean.setId(++LevelBean.BASE_LEVEL_ID);
+        bean.setExpand(false);
         bean.setChildren(null);
         list.add(bean);
         mLevelBean.postValue(list);
         mIsNoData.set(false);
+    }
+
+    public void addCommonLevel(LevelBean parent) {
+        List<LevelBean> list = mLevelBean.getValue();
+        if (list == null) {
+            return;
+        }
+        int index = list.indexOf(parent);
+        if (index == -1) {
+            return;
+        }
+        parent = list.get(index);
+
+        LevelBean bean = new LevelBean();
+        bean.setParent(null);
+        bean.setData("ssssss");
+        bean.setId(list.size() + 1);
+        bean.setParent(parent);
+        bean.setExpand(false);
+        bean.setChildren(null);
+
+        parent.addChildren(bean);
+
     }
 
 }
